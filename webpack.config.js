@@ -1,12 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     'app.bundle':'./src/app.js'
   },
   output: {
     path: __dirname + '/dist',
-    filename: '[name].[chunkhash].js',
+    filename: '[name].js',
     library: "iot",
     libraryTarget: "umd"
   },
@@ -29,6 +29,6 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ]
 };

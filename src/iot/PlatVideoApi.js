@@ -16,7 +16,7 @@ export default class PlatVideoApi {
             baseURL: this.host,
             timeout: 5000,
             headers: {
-                "api-key": this.apiKey
+                "api-key": this.apiKey,
             }
         });
         console.log(VideoPlatApiUri.GET_VIDEO_LIST);
@@ -31,7 +31,7 @@ export default class PlatVideoApi {
      */
     getLivePlayAddress(deviceId, channelId, protocol_type, options){
         console.log("video-api");
-        this.httpClient.get("",{
+        this.httpClient.get(VideoPlatApiUri.LIVE_PLAY_ADDRESS,{
             params:{
                 device_id: deviceId,
                 channel_id: channelId,
