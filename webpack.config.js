@@ -10,7 +10,12 @@ module.exports = {
     library: "iot",
     libraryTarget: "umd"
   },
-  module: {
+  devServer: {
+    proxy: {
+      '/api': 'http://192.168.119.133:8001'
+    }
+  },
+    module: {
     rules: [
       {
         test: /\.scss$/i,
@@ -27,6 +32,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'My App',
       filename: 'index.html',
+      inject: "head",
       template: 'src/index.html'
     }),
     // new CleanWebpackPlugin(),
